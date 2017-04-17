@@ -1,0 +1,481 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/jdavis/grunt-rename"
+
+    >grunt-rename (v0.1.4)</a>
+</h1>
+<h4>Move and/or rename files.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.grunt-rename">module grunt-rename</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-rename.grunt-rename">
+            function <span class="apidocSignatureSpan"></span>grunt-rename
+            <span class="apidocSignatureSpan">(grunt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-rename.rename">
+            function <span class="apidocSignatureSpan">grunt-rename.</span>rename
+            <span class="apidocSignatureSpan">(grunt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-rename.toString">
+            function <span class="apidocSignatureSpan">grunt-rename.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.grunt-rename.rename">module grunt-rename.rename</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-rename.rename.rename">
+            function <span class="apidocSignatureSpan">grunt-rename.</span>rename
+            <span class="apidocSignatureSpan">(grunt)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.grunt-rename.toString">module grunt-rename.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-rename.toString.toString">
+            function <span class="apidocSignatureSpan">grunt-rename.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.grunt-rename" id="apidoc.module.grunt-rename">module grunt-rename</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-rename.grunt-rename" id="apidoc.element.grunt-rename.grunt-rename">
+        function <span class="apidocSignatureSpan"></span>grunt-rename
+        <span class="apidocSignatureSpan">(grunt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">grunt-rename = function (grunt) {
+
+    // Project configuration.
+    grunt.initConfig({
+        jshint: {
+            all: [
+                &#x27;Gruntfile.js&#x27;,
+                &#x27;tasks/*.js&#x27;,
+                &#x27;&#x3c;%= nodeunit.tests %&#x3e;&#x27;,
+            ],
+            options: {
+                jshintrc: &#x27;.jshintrc&#x27;,
+            },
+        },
+
+        clean: {
+            tests: [&#x27;test/files/&#x27;],
+            tmp: [&#x27;tmp/&#x27;],
+            one: [&#x27;6&#x27;, &#x27;7&#x27;, &#x27;eight&#x27;],
+        },
+
+        rename: {
+            one: {
+                src: &#x27;test/files/1&#x27;,
+                dest: &#x27;tmp/&#x27;
+            },
+            two: {
+                src: &#x27;test/files/2&#x27;,
+                dest: &#x27;tmp/2&#x27;
+            },
+            three: {
+                src: &#x27;test/files/3&#x27;,
+                dest: &#x27;tmp/three&#x27;
+            },
+            four: {
+                src: &#x27;test/files/4&#x27;,
+                dest: &#x27;tmp/tmp/&#x27;
+            },
+            five: {
+                src: &#x27;test/files/5&#x27;,
+                dest: &#x27;tmp/tmp/five&#x27;
+            },
+            six: {
+                src: &#x27;test/files/6&#x27;,
+                dest: &#x27;&#x27;
+            },
+            seven: {
+                src: &#x27;test/files/7&#x27;,
+                dest: &#x27;7&#x27;
+            },
+            eight: {
+                src: &#x27;test/files/8&#x27;,
+                dest: &#x27;eight&#x27;
+            },
+
+            eleven: {
+                src: &#x27;test/files/11&#x27;,
+                dest: &#x27;tmp/eleven&#x27;,
+                options: {
+                    ignore: true,
+                }
+            }
+        },
+
+        // Unit tests.
+        nodeunit: {
+            tests: [&#x27;test/*_test.js&#x27;],
+        },
+
+    });
+
+    // Actually load this plugin&#x27;s task(s).
+    grunt.loadTasks(&#x27;tasks&#x27;);
+
+    // These plugins provide necessary tasks.
+    grunt.loadNpmTasks(&#x27;grunt-contrib-jshint&#x27;);
+    grunt.loadNpmTasks(&#x27;grunt-contrib-clean&#x27;);
+    grunt.loadNpmTasks(&#x27;grunt-contrib-nodeunit&#x27;);
+
+    // Whenever the &#x22;test&#x22; task is run, first clean the &#x22;tmp&#x22; dir, then run this
+    // plugin&#x27;s task(s), then test the result.
+    grunt.registerTask(&#x27;test&#x27;, [&#x27;clean&#x27;, &#x27;make&#x27;, &#x27;rename&#x27;, &#x27;nodeunit&#x27;, &#x27;clean&#x27;]);
+
+    // By default, lint and run all tests.
+    grunt.registerTask(&#x27;default&#x27;, [&#x27;jshint&#x27;, &#x27;test&#x27;]);
+
+    grunt.registerTask(&#x27;make&#x27;, function () {
+        var p = &#x27;./test/files/&#x27;;
+
+        for(var i = 1; i &#x3c;= 10; i++) {
+            grunt.file.write(path.join(p, &#x27;&#x27; + i, &#x27;&#x27;));
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-rename.rename" id="apidoc.element.grunt-rename.rename">
+        function <span class="apidocSignatureSpan">grunt-rename.</span>rename
+        <span class="apidocSignatureSpan">(grunt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rename = function (grunt) {
+    grunt.registerMultiTask(&#x27;rename&#x27;, &#x27;Move and/or rename files.&#x27;, function() {
+        var done = this.async(),
+            options = this.options({
+                ignore: false,
+            });
+
+        //console.log(options);
+
+        if (!this.files.length) {
+            grunt.log.writeln(&#x27;Moved &#x27;+&#x27;0&#x27;.cyan+&#x27; files.&#x27;);
+            return done();
+        }
+
+        this.files.forEach(function (f) {
+            var dest = f.dest,
+                dir = path.dirname(dest);
+
+            // Check if no source files were found
+            if (f.src.length === 0) {
+                // Continue if ignore is set
+                if (options.ignore) {
+                    return done();
+                } else {
+                    grunt.fail.warn(&#x27;Could not move file to &#x27; + f.dest + &#x27; it did not exist.&#x27;);
+                    return done();
+                }
+            }
+
+            f.src.filter(function (file) {
+                // Resolve some conflicts because path doesn&#x27;t work as I would
+                // expect
+                if (dest.lastIndexOf(path.sep) === dest.length - 1) {
+                    dir = dest;
+                    dest = path.join(dir, path.basename(file));
+                }
+
+                grunt.file.mkdir(dir);
+
+                // First try builtin rename ability
+                fs.rename(file, dest, function (err) {
+                    // Easy peasy
+                    if (!err) {
+                        grunt.verbose.writeln(&#x27;Moved &#x27; + file + &#x27; to &#x27; + dest);
+                        return done();
+                    }
+
+                    // Now fallback to copying/unlinking
+                    var read = fs.createReadStream(file);
+                    var write = fs.createWriteStream(dest);
+
+                    read.on(&#x27;error&#x27;, function (err) {
+                        grunt.fail.warn(&#x27;Failed to read &#x27; + file);
+                        return done();
+                    });
+
+                    write.on(&#x27;error&#x27;, function (err) {
+                        grunt.fail.warn(&#x27;Failed to write to &#x27; + dest);
+                        return done();
+                    });
+
+                    write.on(&#x27;close&#x27;, function () {
+                        // Now remove original file
+                        grunt.file.delete(file);
+
+                        grunt.verbose.writeln(&#x27;Moved &#x27; + file + &#x27; to &#x27; + dest);
+                        return done();
+                    });
+
+                    read.pipe(write);
+                });
+            });
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+dir = dest;
+dest = path.join(dir, path.basename(file));
+                }
+
+                grunt.file.mkdir(dir);
+
+                // First try builtin rename ability
+                fs.<span class="apidocCodeKeywordSpan">rename</span>(file, dest, function (err) {
+// Easy peasy
+if (!err) {
+    grunt.verbose.writeln(&#x27;Moved &#x27; + file + &#x27; to &#x27; + dest);
+    return done();
+}
+
+// Now fallback to copying/unlinking
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-rename.toString" id="apidoc.element.grunt-rename.toString">
+        function <span class="apidocSignatureSpan">grunt-rename.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.grunt-rename.rename" id="apidoc.module.grunt-rename.rename">module grunt-rename.rename</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-rename.rename.rename" id="apidoc.element.grunt-rename.rename.rename">
+        function <span class="apidocSignatureSpan">grunt-rename.</span>rename
+        <span class="apidocSignatureSpan">(grunt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rename = function (grunt) {
+    grunt.registerMultiTask(&#x27;rename&#x27;, &#x27;Move and/or rename files.&#x27;, function() {
+        var done = this.async(),
+            options = this.options({
+                ignore: false,
+            });
+
+        //console.log(options);
+
+        if (!this.files.length) {
+            grunt.log.writeln(&#x27;Moved &#x27;+&#x27;0&#x27;.cyan+&#x27; files.&#x27;);
+            return done();
+        }
+
+        this.files.forEach(function (f) {
+            var dest = f.dest,
+                dir = path.dirname(dest);
+
+            // Check if no source files were found
+            if (f.src.length === 0) {
+                // Continue if ignore is set
+                if (options.ignore) {
+                    return done();
+                } else {
+                    grunt.fail.warn(&#x27;Could not move file to &#x27; + f.dest + &#x27; it did not exist.&#x27;);
+                    return done();
+                }
+            }
+
+            f.src.filter(function (file) {
+                // Resolve some conflicts because path doesn&#x27;t work as I would
+                // expect
+                if (dest.lastIndexOf(path.sep) === dest.length - 1) {
+                    dir = dest;
+                    dest = path.join(dir, path.basename(file));
+                }
+
+                grunt.file.mkdir(dir);
+
+                // First try builtin rename ability
+                fs.rename(file, dest, function (err) {
+                    // Easy peasy
+                    if (!err) {
+                        grunt.verbose.writeln(&#x27;Moved &#x27; + file + &#x27; to &#x27; + dest);
+                        return done();
+                    }
+
+                    // Now fallback to copying/unlinking
+                    var read = fs.createReadStream(file);
+                    var write = fs.createWriteStream(dest);
+
+                    read.on(&#x27;error&#x27;, function (err) {
+                        grunt.fail.warn(&#x27;Failed to read &#x27; + file);
+                        return done();
+                    });
+
+                    write.on(&#x27;error&#x27;, function (err) {
+                        grunt.fail.warn(&#x27;Failed to write to &#x27; + dest);
+                        return done();
+                    });
+
+                    write.on(&#x27;close&#x27;, function () {
+                        // Now remove original file
+                        grunt.file.delete(file);
+
+                        grunt.verbose.writeln(&#x27;Moved &#x27; + file + &#x27; to &#x27; + dest);
+                        return done();
+                    });
+
+                    read.pipe(write);
+                });
+            });
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+dir = dest;
+dest = path.join(dir, path.basename(file));
+                }
+
+                grunt.file.mkdir(dir);
+
+                // First try builtin rename ability
+                fs.<span class="apidocCodeKeywordSpan">rename</span>(file, dest, function (err) {
+// Easy peasy
+if (!err) {
+    grunt.verbose.writeln(&#x27;Moved &#x27; + file + &#x27; to &#x27; + dest);
+    return done();
+}
+
+// Now fallback to copying/unlinking
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.grunt-rename.toString" id="apidoc.module.grunt-rename.toString">module grunt-rename.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-rename.toString.toString" id="apidoc.element.grunt-rename.toString.toString">
+        function <span class="apidocSignatureSpan">grunt-rename.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
