@@ -1,4 +1,7 @@
-# api documentation for  [grunt-rename (v0.1.4)](https://github.com/jdavis/grunt-rename)  [![npm package](https://img.shields.io/npm/v/npmdoc-grunt-rename.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-grunt-rename) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-grunt-rename.svg)](https://travis-ci.org/npmdoc/node-npmdoc-grunt-rename)
+# npmdoc-grunt-rename
+
+#### api documentation for  [grunt-rename (v0.1.4)](https://github.com/jdavis/grunt-rename)  [![npm package](https://img.shields.io/npm/v/npmdoc-grunt-rename.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-grunt-rename) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-grunt-rename.svg)](https://travis-ci.org/npmdoc/node-npmdoc-grunt-rename)
+
 #### Move and/or rename files.
 
 [![NPM](https://nodei.co/npm/grunt-rename.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/grunt-rename)
@@ -72,7 +75,8 @@
     "scripts": {
         "test": "grunt test"
     },
-    "version": "0.1.4"
+    "version": "0.1.4",
+    "bin": {}
 }
 ```
 
